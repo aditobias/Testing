@@ -7,8 +7,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 public class Main {
-    private static int a;
-
 
     public static void main(String[] args) {
 
@@ -20,12 +18,8 @@ public class Main {
 
         do{
 
-            o.setA(ThreadLocalRandom.current().nextInt(1,30));
-            o.setB(ThreadLocalRandom.current().nextInt(1,30));
-
-            a = o.getA();
-
-
+            o.setA(ThreadLocalRandom.current().nextInt(1,31));
+            o.setB(ThreadLocalRandom.current().nextInt(1,31));
 
             int randomNum = ThreadLocalRandom.current().nextInt(1, 6);
 
@@ -42,7 +36,6 @@ public class Main {
                     break;
                 default:
                     break;
-
             }
             while (true)
                 try {
@@ -52,8 +45,11 @@ public class Main {
                     System.out.print("You have entered an invalid input. Please try again: ");
                 }
 
+                System.out.print(o.list);
+
             if (o.getAnswer() == o.getResult()){
                 System.out.println("Correct!");
+
             }
             else{
                 countWrong++;

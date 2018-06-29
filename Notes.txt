@@ -1,0 +1,15 @@
+June 29, 2018 - first
+---------------------------
+Next Implementation:
+
+1. Able to handle equation with 2 operators and 3 numbers
+2. Add difficulty level
+
+Problems:
+
+1. PEMDAS Implementation
+2. Left to right solution answer
+
+Solution:
+
+1. contains function or substring
