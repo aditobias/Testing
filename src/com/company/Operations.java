@@ -6,7 +6,7 @@ public class Operations {
 
     public int a, b, result, answer;
 
-    public String text;
+    public String text, operator;
 
     ArrayList<Integer> list = new ArrayList<>();
 
@@ -17,6 +17,14 @@ public class Operations {
 
     public void setText(String text){
         this.text = text;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public void setOperator(String operator) {
+        this.operator = operator;
     }
 
     public int getAnswer() {
@@ -59,32 +67,31 @@ public class Operations {
     void addition(int a, int b){
 
         setResult(a + b);
-        System.out.print("What is " + a + " + " + b + " ? ");
+        setText("What is " + a + " + " + b + " ? ");
 
     }
     void subtraction(int a, int b){
 
         setResult(a - b);
-        System.out.print("What is " + a + " - " + b + " ? ");
+       setText("What is " + a + " - " + b + " ? ");
 
     }
     void multiplication(int a, int b){
 
         setResult(a * b);
         setText("What is " + a + " * " + b + " ? ");
-        System.out.print("What is " + a + " * " + b + " ? ");
 
     }
     void division(int a, int b){
 
         setResult(a / b);
-        System.out.print("What is " + a + " / " + b + " ? ");
+        setText("What is " + a + " / " + b + " ? ");
 
     }
     void modal(int a, int b){
 
         setResult(a % b);
-        System.out.print("What is " + a + " % " + b + " ? ");
+        setText("What is " + a + " % " + b + " ? ");
 
     }
 

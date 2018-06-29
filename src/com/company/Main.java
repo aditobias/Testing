@@ -37,6 +37,10 @@ public class Main {
                 default:
                     break;
             }
+
+
+            checkOperator(o.getText());
+
             while (true)
                 try {
                     o.setAnswer(Integer.parseInt(test.nextLine()));
@@ -49,7 +53,6 @@ public class Main {
 
             if (o.getAnswer() == o.getResult()){
                 System.out.println("Correct!");
-
             }
             else{
                 countWrong++;
@@ -62,6 +65,19 @@ public class Main {
             System.out.print("\nYou lose");
         }
 	// write your code here
+    }
+
+    private static void checkOperator(String text){
+
+        Operations o = new Operations();
+
+        System.out.print(o.getOperator());
+        if (o.getText().contains("+") || o.getOperator().contains("-")){
+            System.out.print("Test");
+        }
+        else if (o.getOperator().contains(" / ") || o.getOperator().contains("*")){
+            System.out.print("To Test");
+        }
     }
 
 }
