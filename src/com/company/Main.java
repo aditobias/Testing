@@ -1,69 +1,58 @@
 
 package com.company;
-import jdk.internal.util.xml.impl.Input;
 
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
-import javax.swing.JOptionPane;
-import java.lang.Math;
 import java.util.concurrent.ThreadLocalRandom;
 
 
 public class Main {
+    private static int a;
+
 
     public static void main(String[] args) {
 
         Scanner test = new Scanner (System.in);
 
-        int num1 = 0, num2 = 0,result = 0;
-        int resultOperator;
         int countWrong = 0;
-        boolean input;
-        int answer = 0;
+
+        Operations o = new Operations();
 
         do{
 
+            o.setA(ThreadLocalRandom.current().nextInt(1,30));
+            o.setB(ThreadLocalRandom.current().nextInt(1,30));
 
-            num1 = ThreadLocalRandom.current().nextInt(1,30);
-            num2 = ThreadLocalRandom.current().nextInt(1,30);
+            a = o.getA();
 
-            int randomNum = ThreadLocalRandom.current().nextInt(1, 5);
 
-            if (randomNum == 1) {
-                result = num1 + num2;
 
-                System.out.print("What is " + num1 + " + " + num2 + " ? ");
+            int randomNum = ThreadLocalRandom.current().nextInt(1, 6);
+
+            switch (randomNum){
+                case 1: o.addition(o.getA(), o.getB());
+                    break;
+                case 2: o.subtraction(o.getA(), o.getB());
+                    break;
+                case 3: o.multiplication(o.getA(), o.getB());
+                    break;
+                case 4: o.division(o.getA(), o.getB());
+                    break;
+                case 5: o.modal(o.getA(), o.getB());
+                    break;
+                default:
+                    break;
+
             }
-            else if (randomNum == 2) {
-
-                result = num1 - num2;
-
-                System.out.print("What is " + num1 + " - " + num2 + " ? ");
-            }
-            else if (randomNum == 3){
-
-                result = num1 / num2;
-
-                System.out.print("What is " + num1 + " / " + num2 + " ? ");
-            }
-            else if (randomNum == 4){
-
-                result = num1 * num2;
-
-                System.out.print("What is " + num1 + " * " + num2 + " ? ");
-            }
-
-
-
             while (true)
                 try {
-                    answer = Integer.parseInt(test.nextLine());
+                    o.setAnswer(Integer.parseInt(test.nextLine()));
                     break;
                 } catch (NumberFormatException nfe) {
                     System.out.print("You have entered an invalid input. Please try again: ");
                 }
 
-            if (answer == result){
+            if (o.getAnswer() == o.getResult()){
                 System.out.println("Correct!");
             }
             else{
@@ -78,6 +67,5 @@ public class Main {
         }
 	// write your code here
     }
-
 
 }
