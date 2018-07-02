@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class Operations {
 
-    public int a, b, result, answer;
+    private int a, b, result, answer;
 
-    public String text, operator;
+    private String text, operator;
 
     ArrayList<Integer> list = new ArrayList<>();
 
 
-    public String getText(){
+    String getText(){
         return text;
     }
 
-    public void setText(String text){
+    private void setText(String text){
         this.text = text;
     }
 
@@ -27,72 +27,88 @@ public class Operations {
         this.operator = operator;
     }
 
-    public int getAnswer() {
+    int getAnswer() {
 
         return answer;
     }
 
-    public void setAnswer(int answer) {
+    void setAnswer(int answer) {
         this.answer = answer;
 
     }
 
-    public int getA(){
+    private int getA(){
 
         return a;
     }
-    public void setA(int a){
+    void setA(int a){
 
         this.a = a;
     }
 
-    public int getB(){
+    private int getB(){
 
         return b;
     }
 
-    public void setB(int b){
+    void setB(int b){
         this.b = b;
 
     }
-    public int getResult(){
+    int getResult(){
 
         return result;
     }
-    public void setResult(int result){
+    private void setResult(int result){
 
         this.result = result;
     }
 
-    void addition(int a, int b){
+    private void addition(int a, int b){
 
         setResult(a + b);
         setText("What is " + a + " + " + b + " ? ");
 
     }
-    void subtraction(int a, int b){
+    private void subtraction(int a, int b){
 
         setResult(a - b);
        setText("What is " + a + " - " + b + " ? ");
 
     }
-    void multiplication(int a, int b){
+    private void multiplication(int a, int b){
 
         setResult(a * b);
         setText("What is " + a + " * " + b + " ? ");
 
     }
-    void division(int a, int b){
+    private void division(int a, int b){
 
         setResult(a / b);
         setText("What is " + a + " / " + b + " ? ");
 
     }
-    void modal(int a, int b){
+    private void modal(int a, int b){
 
         setResult(a % b);
         setText("What is " + a + " % " + b + " ? ");
 
+    }
+    void operator(int randomNum){
+        switch (randomNum){
+            case 1: addition(getA(), getB());
+                break;
+            case 2: subtraction(getA(), getB());
+                break;
+            case 3: multiplication(getA(), getB());
+                break;
+            case 4: division(getA(), getB());
+                break;
+            case 5: modal(getA(), getB());
+                break;
+            default:
+                break;
+        }
     }
 
 }

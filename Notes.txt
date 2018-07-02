@@ -9,6 +9,7 @@ Problems:
 
 1. PEMDAS Implementation
 2. Left to right solution answer
+3. Find multiple indexes of operators
 
 Solution:
 
